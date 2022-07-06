@@ -91,7 +91,7 @@ def condicion(lista):
         b = b and lista[j-1]['idunplug_station'] == lista[j]['idplug_station']
         j += 1
     return b    
-    
+
 temp = rdd.filter(lambda x: len(x[1])>2).filter(lambda x: condicion(x[1]))
 print("Cinco viaje sucesivo empieza en la estacion donde acabo el viaje previo.", temp.take(5))
 
